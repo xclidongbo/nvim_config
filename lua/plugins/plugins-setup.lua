@@ -66,7 +66,7 @@ return require('packer').startup(function(use)
   use "numToStr/Comment.nvim" -- gcc和gc注释
   use "windwp/nvim-autopairs" -- 自动补全括号
 
-  --- use "akinsho/bufferline.nvim" -- buffer分割线
+  -- use "akinsho/bufferline.nvim" -- buffer分割线
   -- using packer.nvim
   use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
   use "lewis6991/gitsigns.nvim" -- 左则git提示
@@ -77,7 +77,14 @@ return require('packer').startup(function(use)
   }
   -- 终端
   use {"akinsho/toggleterm.nvim", tag = '*'}
-  
+
+  -- dashboard-nvim
+  use {
+    'glepnir/dashboard-nvim',
+    event = 'VimEnter',
+    requires = {'nvim-tree/nvim-web-devicons'}
+  }
+
   if packer_bootstrap then
     require('packer').sync()
   end
