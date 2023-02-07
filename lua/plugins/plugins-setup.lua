@@ -30,6 +30,9 @@ return require('packer').startup(function(use)
   -- 主题
   use 'folke/tokyonight.nvim'
 
+  -- icons
+  use 'nvim-tree/nvim-web-devicons'
+
   -- 状态栏
   use {
     'nvim-lualine/lualine.nvim',
@@ -58,10 +61,14 @@ return require('packer').startup(function(use)
   -- 自动补全
   use "hrsh7th/nvim-cmp"
   use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-path" -- 文件路径
+  use "hrsh7th/cmp-buffer"
+  use "hrsh7th/cmp-cmdline"
+
   use "L3MON4D3/LuaSnip" -- snippets引擎，不装这个自动补全会出问题
   use "saadparwaiz1/cmp_luasnip"
   use "rafamadriz/friendly-snippets"
-  use "hrsh7th/cmp-path" -- 文件路径
+  use "hrsh7th/cmp-vsnip"
 
   use "numToStr/Comment.nvim" -- gcc和gc注释
   use "windwp/nvim-autopairs" -- 自动补全括号
@@ -78,12 +85,53 @@ return require('packer').startup(function(use)
   -- 终端
   use {"akinsho/toggleterm.nvim", tag = '*'}
 
+  -- alpha-nvim
+--  use {
+--    'goolord/alpha-nvim',
+--    requires = { 'nvim-tree/nvim-web-devicons' },
+--    config = function ()
+--        require'alpha'.setup(require'alpha.themes.startify'.config)
+--    end
+--  }
+
   -- dashboard-nvim
   use {
     'glepnir/dashboard-nvim',
     event = 'VimEnter',
+    config = function()
+    require('dashboard').setup {
+        theme = 'hyper',
+        config = {
+          week_header = {
+           enable = true,
+          },
+          shortcut = {
+            { desc = ' Update', group = '@property', action = 'Lazy update', key = 'u' },
+            {
+              desc = ' Files',
+              group = 'Label',
+              action = 'Telescope find_files',
+              key = 'f',
+            },
+            {
+              desc = ' Apps',
+              group = 'DiagnosticHint',
+              action = 'Telescope app',
+              key = 'a',
+            },
+            {
+              desc = ' dotfiles',
+              group = 'Number',
+              action = 'Telescope dotfiles',
+              key = 'd',
+            },
+          },
+        },
+    }
+    end,
     requires = {'nvim-tree/nvim-web-devicons'}
   }
+
 
   if packer_bootstrap then
     require('packer').sync()
