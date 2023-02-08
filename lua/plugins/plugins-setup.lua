@@ -68,7 +68,9 @@ return require('packer').startup(function(use)
   use "L3MON4D3/LuaSnip" -- snippets引擎，不装这个自动补全会出问题
   use "saadparwaiz1/cmp_luasnip"
   use "rafamadriz/friendly-snippets"
+  -- for vsnip users
   use "hrsh7th/cmp-vsnip"
+  -- use "hrsh7th/vim-vsnip"
 
   use "numToStr/Comment.nvim" -- gcc和gc注释
   use "windwp/nvim-autopairs" -- 自动补全括号
@@ -84,15 +86,6 @@ return require('packer').startup(function(use)
   }
   -- 终端
   use {"akinsho/toggleterm.nvim", tag = '*'}
-
-  -- alpha-nvim
---  use {
---    'goolord/alpha-nvim',
---    requires = { 'nvim-tree/nvim-web-devicons' },
---    config = function ()
---        require'alpha'.setup(require'alpha.themes.startify'.config)
---    end
---  }
 
   -- dashboard-nvim
   use {

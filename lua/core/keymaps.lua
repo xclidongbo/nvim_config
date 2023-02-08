@@ -22,8 +22,5 @@ keymap.set("n", "<leader>nh", ":nohl<CR>")
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 -- 切换buffer
-keymap.set("n", "<C-L>", ":bnext<CR>")
-keymap.set("n", "<C-H>", ":bprevious<CR>")
-
-
-
+keymap.set("n", "<C-k>", ":bnext<CR>")
+keymap.set("n", "<C-j>", ":bprevious<CR>")
