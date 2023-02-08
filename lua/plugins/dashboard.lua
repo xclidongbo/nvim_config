@@ -10,7 +10,7 @@
 --        enable = true,
 --       },
 --       shortcut = {
---         { desc = ' Update', group = '@property', action = 'Lazy update', key = 'u' },
+--         { desc = ' Update', group = '@property', action = 'PackerSync', key = 'u' },
 --         {
 --           desc = ' Files',
 --           group = 'Label',
@@ -32,4 +32,4 @@
 --       },
 --     },
 --   })
-
+--
