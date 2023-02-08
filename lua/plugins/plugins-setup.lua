@@ -85,52 +85,45 @@ return require('packer').startup(function(use)
   -- 终端
   use {"akinsho/toggleterm.nvim", tag = '*'}
 
-  -- alpha-nvim
---  use {
---    'goolord/alpha-nvim',
---    requires = { 'nvim-tree/nvim-web-devicons' },
---    config = function ()
---        require'alpha'.setup(require'alpha.themes.startify'.config)
---    end
---  }
-
   -- dashboard-nvim
   use {
     'glepnir/dashboard-nvim',
     event = 'VimEnter',
     config = function()
-    require('dashboard').setup {
-        theme = 'hyper',
-        config = {
-          week_header = {
-           enable = true,
+      require('dashboard').setup {
+      theme = 'hyper',
+      config = {
+        week_header = {
+         enable = true,
+        },
+        shortcut = {
+          { desc = ' Update', group = '@property', action = 'PackerSync', key = 'u' },
+          {
+            desc = ' Files',
+            group = 'Label',
+            action = 'Telescope find_files',
+            key = 'f',
           },
-          shortcut = {
-            { desc = ' Update', group = '@property', action = 'Lazy update', key = 'u' },
-            {
-              desc = ' Files',
-              group = 'Label',
-              action = 'Telescope find_files',
-              key = 'f',
-            },
-            {
-              desc = ' Apps',
-              group = 'DiagnosticHint',
-              action = 'Telescope app',
-              key = 'a',
-            },
-            {
-              desc = ' dotfiles',
-              group = 'Number',
-              action = 'Telescope dotfiles',
-              key = 'd',
-            },
+          {
+            desc = ' Apps',
+            group = 'DiagnosticHint',
+            action = 'Telescope app',
+            key = 'a',
+          },
+          {
+            desc = ' dotfiles',
+            group = 'Number',
+            action = 'Telescope dotfiles',
+            key = 'd',
           },
         },
+      },
     }
     end,
     requires = {'nvim-tree/nvim-web-devicons'}
   }
+
+  -- auto close tag
 
 
   if packer_bootstrap then
