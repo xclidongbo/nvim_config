@@ -34,5 +34,8 @@ opt.smartcase = true
 opt.termguicolors = true
 opt.signcolumn = "yes"
 
-vim.cmd[[colorscheme tokyonight-night]]
+-- 主题
+-- vim.cmd[[colorscheme tokyonight-night]]
+vim.o.background = "dark"
+vim.cmd([[colorscheme gruvbox]])
 

@@ -16,4 +16,5 @@ require("plugins.telescope")
 require("plugins.toggleterm")
 require("plugins.dashboard")
 require("plugins.colorizer")
+require("plugins.prettier")
 

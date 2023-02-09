@@ -29,6 +29,7 @@ return require('packer').startup(function(use)
 
   -- 主题
   use 'folke/tokyonight.nvim'
+  use { "ellisonleao/gruvbox.nvim" }
 
   -- icons
   use 'nvim-tree/nvim-web-devicons'
@@ -131,6 +132,10 @@ return require('packer').startup(function(use)
   use 'NvChad/nvim-colorizer.lua'
   -- blankline
   use "lukas-reineke/indent-blankline.nvim"
+
+  -- prettier
+  use('jose-elias-alvarez/null-ls.nvim')
+  use('MunifTanjim/prettier.nvim')
 
 
   if packer_bootstrap then
