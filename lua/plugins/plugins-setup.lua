@@ -127,6 +127,11 @@ return require('packer').startup(function(use)
 
   -- auto close tag
 
+  -- colorizer
+  use 'NvChad/nvim-colorizer.lua'
+  -- blankline
+  use "lukas-reineke/indent-blankline.nvim"
+
 
   if packer_bootstrap then
     require('packer').sync()

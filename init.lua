@@ -15,5 +15,5 @@ require("plugins.gitsigns")
 require("plugins.telescope")
 require("plugins.toggleterm")
 require("plugins.dashboard")
-
+require("plugins.colorizer")
 
