@@ -120,7 +120,7 @@ _G.packer_plugins = {
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["dashboard-nvim"] = {
-    config = { "\27LJ\2\n�\3\0\0\6\0\r\0\0216\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0034\4\5\0005\5\a\0>\5\1\0045\5\b\0>\5\2\0045\5\t\0>\5\3\0045\5\n\0>\5\4\4=\4\v\3=\3\f\2B\0\2\1K\0\1\0\vconfig\rshortcut\1\0\4\tdesc\17 dotfiles\ngroup\vNumber\bkey\6d\vaction\23Telescope dotfiles\1\0\4\tdesc\r Apps\ngroup\19DiagnosticHint\bkey\6a\vaction\18Telescope app\1\0\4\tdesc\14 Files\ngroup\nLabel\bkey\6f\vaction\25Telescope find_files\1\0\4\tdesc\15 Update\ngroup\14@property\bkey\6u\vaction\15PackerSync\16week_header\1\0\0\1\0\1\venable\2\1\0\1\ntheme\nhyper\nsetup\14dashboard\frequire\0" },
+    config = { "\27LJ\2\n�\3\0\0\6\0\r\0\0216\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0034\4\5\0005\5\a\0>\5\1\0045\5\b\0>\5\2\0045\5\t\0>\5\3\0045\5\n\0>\5\4\4=\4\v\3=\3\f\2B\0\2\1K\0\1\0\vconfig\rshortcut\1\0\4\vaction\23Telescope dotfiles\tdesc\17 dotfiles\ngroup\vNumber\bkey\6d\1\0\4\vaction\18Telescope app\tdesc\r Apps\ngroup\19DiagnosticHint\bkey\6a\1\0\4\vaction\25Telescope find_files\tdesc\14 Files\ngroup\nLabel\bkey\6f\1\0\4\vaction\15PackerSync\tdesc\15 Update\ngroup\14@property\bkey\6u\16week_header\1\0\0\1\0\1\venable\2\1\0\1\ntheme\nhyper\nsetup\14dashboard\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -147,10 +147,23 @@ _G.packer_plugins = {
     path = "/Users/lidongbo/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
+  ["lspsaga.nvim"] = {
+    config = { "\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\flspsaga\frequire\0" },
+    loaded = true,
+    path = "/Users/lidongbo/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
+    url = "https://github.com/glepnir/lspsaga.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/Users/lidongbo/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["markdown-preview.nvim"] = {
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/lidongbo/.local/share/nvim/site/pack/packer/opt/markdown-preview.nvim",
+    url = "https://github.com/iamcco/markdown-preview.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -245,8 +258,20 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Setup for: markdown-preview.nvim
+time([[Setup for markdown-preview.nvim]], true)
+try_loadstring("\27LJ\2\n=\0\0\2\0\4\0\0056\0\0\0009\0\1\0005\1\3\0=\1\2\0K\0\1\0\1\2\0\0\rmarkdown\19mkdp_filetypes\6g\bvim\0", "setup", "markdown-preview.nvim")
+time([[Setup for markdown-preview.nvim]], false)
+-- Config for: lspsaga.nvim
+time([[Config for lspsaga.nvim]], true)
+try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\flspsaga\frequire\0", "config", "lspsaga.nvim")
+time([[Config for lspsaga.nvim]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
+  -- Filetype lazy-loads
+time([[Defining lazy-load filetype autocommands]], true)
+vim.cmd [[au FileType markdown ++once lua require("packer.load")({'markdown-preview.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
+time([[Defining lazy-load filetype autocommands]], false)
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
 vim.cmd [[au VimEnter * ++once lua require("packer.load")({'dashboard-nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]

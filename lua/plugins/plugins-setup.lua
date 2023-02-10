@@ -59,6 +59,14 @@ return require('packer').startup(function(use)
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig"
   }
+  -- neovim-tutorial/lspconfig.lua at main · bryant-video/neovim-tutorial
+  use({
+    "glepnir/lspsaga.nvim",
+    branch = "main",
+    config = function()
+      require("lspsaga").setup({})
+    end,
+  }) -- enhanced lsp uis
   -- 自动补全
   use "hrsh7th/nvim-cmp"
   use "hrsh7th/cmp-nvim-lsp"
@@ -136,6 +144,16 @@ return require('packer').startup(function(use)
   -- prettier
   use('jose-elias-alvarez/null-ls.nvim')
   use('MunifTanjim/prettier.nvim')
+
+  -- markdown preview-- install without yarn or npm
+  use({ 
+    "iamcco/markdown-preview.nvim", 
+    run = "cd app && npm install", 
+    setup = function() 
+      vim.g.mkdp_filetypes = { "markdown" }
+    end, 
+    ft = { "markdown" }, 
+  })
 
 
   if packer_bootstrap then
