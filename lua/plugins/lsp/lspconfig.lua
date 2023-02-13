@@ -62,7 +62,19 @@ require("lspconfig").html.setup({
 	on_attach = on_attach,
 })
 
+-- emmet_ls 配置
+local configs = require('lspconfig/configs')
+local capabilities1 = vim.lsp.protocol.make_client_capabilities()
+capabilities1.textDocument.completion.completionItem.snippetSupport = true
+
 require("lspconfig").emmet_ls.setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
+	capabilities = capabilities1,
+  filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less' },
+    init_options = {
+      html = {
+        options = {
+          ["bem.enabled"] = true,
+        },
+      },
+    }
 })

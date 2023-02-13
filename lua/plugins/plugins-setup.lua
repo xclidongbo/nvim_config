@@ -76,6 +76,10 @@ return require("packer").startup(function(use)
 	use("L3MON4D3/LuaSnip") -- snippets引擎，不装这个自动补全会出问题
 	use("saadparwaiz1/cmp_luasnip")
 	use("rafamadriz/friendly-snippets")
+  use {'dsznajder/vscode-es7-javascript-react-snippets',
+    run = 'yarn install --frozen-lockfile && yarn compile'
+  }
+
 	-- for vsnip users
 	use("hrsh7th/cmp-vsnip")
 	-- use "hrsh7th/vim-vsnip"
