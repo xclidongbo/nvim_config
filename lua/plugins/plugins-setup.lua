@@ -82,6 +82,7 @@ return require("packer").startup(function(use)
 
 	use("numToStr/Comment.nvim") -- gcc和gc注释
 	use("windwp/nvim-autopairs") -- 自动补全括号
+	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" })
 
 	-- use "akinsho/bufferline.nvim" -- buffer分割线
 	-- using packer.nvim
