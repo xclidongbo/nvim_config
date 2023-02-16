@@ -1,4 +1,3 @@
-
 require("plugins.plugins-setup")
 
 -- core
@@ -25,4 +24,4 @@ require("plugins.telescope")
 require("plugins.toggleterm")
 require("plugins.dashboard")
 require("plugins.colorizer")
-
+require("plugins.leap")

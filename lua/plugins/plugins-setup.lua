@@ -76,9 +76,10 @@ return require("packer").startup(function(use)
 	use("L3MON4D3/LuaSnip") -- snippets引擎，不装这个自动补全会出问题
 	use("saadparwaiz1/cmp_luasnip")
 	use("rafamadriz/friendly-snippets")
-  use {'dsznajder/vscode-es7-javascript-react-snippets',
-    run = 'yarn install --frozen-lockfile && yarn compile'
-  }
+	use({
+		"dsznajder/vscode-es7-javascript-react-snippets",
+		run = "yarn install --frozen-lockfile && yarn compile",
+	})
 
 	-- for vsnip users
 	use("hrsh7th/cmp-vsnip")
@@ -87,6 +88,7 @@ return require("packer").startup(function(use)
 	use("numToStr/Comment.nvim") -- gcc和gc注释
 	use("windwp/nvim-autopairs") -- 自动补全括号
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" })
+	use("JoosepAlviste/nvim-ts-context-commentstring") -- ts注释
 
 	-- use "akinsho/bufferline.nvim" -- buffer分割线
 	-- using packer.nvim
@@ -162,6 +164,20 @@ return require("packer").startup(function(use)
 
 	-- trouble
 	use({ "folke/trouble.nvim", requires = "nvim-tree/nvim-web-devicons" })
+
+	-- surround
+	use({
+		"kylechui/nvim-surround",
+		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+		config = function()
+			require("nvim-surround").setup({
+				-- Configuration here, or leave empty to use defaults
+			})
+		end,
+	})
+
+	-- leap 跳转
+	use({ "ggandor/leap.nvim" })
 
 	if packer_bootstrap then
 		require("packer").sync()
