@@ -29,3 +29,6 @@ keymap.set("n", "<C-S-Tab>", ":bprevious<CR>")
 -- JSON格式化
 -- %!jq .
 
+-- lazygit
+
+keymap.set("n", "<leader>gg", ":LazyGit<CR>")
