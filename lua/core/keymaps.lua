@@ -30,5 +30,4 @@ keymap.set("n", "<C-S-Tab>", ":bprevious<CR>")
 -- %!jq .
 
 -- lazygit
-
 keymap.set("n", "<leader>gg", ":LazyGit<CR>")

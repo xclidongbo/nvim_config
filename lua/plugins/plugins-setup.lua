@@ -179,6 +179,10 @@ return require("packer").startup(function(use)
 	-- leap 跳转
 	use({ "ggandor/leap.nvim" })
 
+	-- go
+	use("ray-x/go.nvim")
+	use("ray-x/guihua.lua") -- recommended if need floating window support
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
