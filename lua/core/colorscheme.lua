@@ -1,4 +1,3 @@
-
 -- -- tokyonight
 -- --
 -- local themeName = "tokyonight"
@@ -15,16 +14,14 @@
 -- -- colorscheme tokyonight-moon
 -- vim.cmd("colorscheme tokyonight-moon")
 
-
-
 -- gruvbox
 --
 local themeName = "gruvbox"
 local status, theme = pcall(require, themeName)
 if not status then
-  print(themeName .. "主题没找到")
-return
+	print(themeName .. "主题没找到")
+	return
 end
 
-vim.o.background = "dark" -- dark or "light"
+-- vim.o.background = "dark" -- dark or "light"
 vim.cmd("colorscheme gruvbox")

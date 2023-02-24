@@ -120,7 +120,7 @@ _G.packer_plugins = {
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["dashboard-nvim"] = {
-    config = { "\27LJ\2\n�\3\0\0\6\0\r\0\0216\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0034\4\5\0005\5\a\0>\5\1\0045\5\b\0>\5\2\0045\5\t\0>\5\3\0045\5\n\0>\5\4\4=\4\v\3=\3\f\2B\0\2\1K\0\1\0\vconfig\rshortcut\1\0\4\tdesc\17 dotfiles\vaction\23Telescope dotfiles\bkey\6d\ngroup\vNumber\1\0\4\tdesc\r Apps\vaction\18Telescope app\bkey\6a\ngroup\19DiagnosticHint\1\0\4\tdesc\14 Files\vaction\25Telescope find_files\bkey\6f\ngroup\nLabel\1\0\4\tdesc\15 Update\vaction\15PackerSync\bkey\6u\ngroup\14@property\16week_header\1\0\0\1\0\1\venable\2\1\0\1\ntheme\nhyper\nsetup\14dashboard\frequire\0" },
+    config = { "\27LJ\2\n�\3\0\0\6\0\r\0\0216\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0034\4\5\0005\5\a\0>\5\1\0045\5\b\0>\5\2\0045\5\t\0>\5\3\0045\5\n\0>\5\4\4=\4\v\3=\3\f\2B\0\2\1K\0\1\0\vconfig\rshortcut\1\0\4\vaction\23Telescope dotfiles\bkey\6d\ngroup\vNumber\tdesc\17 dotfiles\1\0\4\vaction\18Telescope app\bkey\6a\ngroup\19DiagnosticHint\tdesc\r Apps\1\0\4\vaction\25Telescope find_files\bkey\6f\ngroup\nLabel\tdesc\14 Files\1\0\4\vaction\15PackerSync\bkey\6u\ngroup\14@property\tdesc\15 Update\16week_header\1\0\0\1\0\1\venable\2\1\0\1\ntheme\nhyper\nsetup\14dashboard\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
