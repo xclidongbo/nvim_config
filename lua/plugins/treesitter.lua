@@ -11,6 +11,10 @@ require("nvim-treesitter.configs").setup({
 	autotag = {
 		enable = true,
 	},
+	context_commentstring = {
+		enable = true,
+		enable_autocmd = false,
+	},
 
 	-- Automatically install missing parsers when entering buffer
 	-- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
