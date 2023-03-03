@@ -36,6 +36,7 @@ mason_lspconfig.setup({
 		"lua_ls",
 		"emmet_ls",
 		"gopls",
+		"solargraph",
 	},
 	-- auto-install configured servers (with lspconfig)
 	automatic_installation = true, -- not the same as ensure_installed
