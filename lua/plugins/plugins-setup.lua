@@ -95,10 +95,15 @@ return require("packer").startup(function(use)
 	use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons" })
 	use("lewis6991/gitsigns.nvim") -- 左则git提示
 
+	-- telescope
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.1", -- 文件检索
 		requires = { { "nvim-lua/plenary.nvim" }, { "kdheepak/lazygit.nvim" } },
+	})
+	use({
+		"nvim-telescope/telescope-file-browser.nvim",
+		requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
 	})
 	-- 终端
 	use({ "akinsho/toggleterm.nvim", tag = "*" })
@@ -131,7 +136,7 @@ return require("packer").startup(function(use)
 						{
 							desc = " dotfiles",
 							group = "Number",
-							action = "Telescope dotfiles",
+							action = "edit ~/.bash_profile",
 							key = "d",
 						},
 					},
