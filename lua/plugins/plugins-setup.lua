@@ -65,6 +65,11 @@ return require("packer").startup(function(use)
 		config = function()
 			require("lspsaga").setup({})
 		end,
+		requires = {
+			{ "nvim-tree/nvim-web-devicons" },
+			--Please make sure you install markdown and markdown_inline parser
+			{ "nvim-treesitter/nvim-treesitter" },
+		},
 	}) -- enhanced lsp uis
 	-- 自动补全
 	use("hrsh7th/nvim-cmp")
@@ -73,7 +78,7 @@ return require("packer").startup(function(use)
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-cmdline")
 
-	use("L3MON4D3/LuaSnip") -- snippets引擎，不装这个自动补全会出问题
+	use({ "L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*", run = "make install_jsregexp" }) -- snippets引擎，不装这个自动补全会出问题
 	use("saadparwaiz1/cmp_luasnip")
 	use("rafamadriz/friendly-snippets")
 	use({
