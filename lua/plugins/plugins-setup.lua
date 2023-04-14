@@ -55,6 +55,9 @@ return require("packer").startup(function(use)
 	-- lsp
 	use({
 		"williamboman/mason.nvim",
+		run = ":MasonUpdate",
+	})
+	use({
 		"williamboman/mason-lspconfig.nvim",
 		"neovim/nvim-lspconfig",
 	})
@@ -78,7 +81,7 @@ return require("packer").startup(function(use)
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-cmdline")
 
-	use({ "L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*", run = "make install_jsregexp" }) -- snippets引擎，不装这个自动补全会出问题
+	use({ "L3MON4D3/LuaSnip", tag = "v1.*", run = "make install_jsregexp" }) -- snippets引擎，不装这个自动补全会出问题
 	use("saadparwaiz1/cmp_luasnip")
 	use("rafamadriz/friendly-snippets")
 	use({
@@ -126,6 +129,7 @@ return require("packer").startup(function(use)
 					},
 					shortcut = {
 						{ desc = " Update", group = "@property", action = "PackerSync", key = "u" },
+						{ desc = " Mason", group = "@property", action = "Mason", key = "m" },
 						{
 							desc = " Files",
 							group = "Label",
