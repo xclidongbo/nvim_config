@@ -55,6 +55,9 @@ return require("packer").startup(function(use)
 	-- lsp
 	use({
 		"williamboman/mason.nvim",
+		run = ":MasonUpdate",
+	})
+	use({
 		"williamboman/mason-lspconfig.nvim",
 		"neovim/nvim-lspconfig",
 	})
@@ -65,6 +68,11 @@ return require("packer").startup(function(use)
 		config = function()
 			require("lspsaga").setup({})
 		end,
+		requires = {
+			{ "nvim-tree/nvim-web-devicons" },
+			--Please make sure you install markdown and markdown_inline parser
+			{ "nvim-treesitter/nvim-treesitter" },
+		},
 	}) -- enhanced lsp uis
 	-- 自动补全
 	use("hrsh7th/nvim-cmp")
@@ -73,7 +81,7 @@ return require("packer").startup(function(use)
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-cmdline")
 
-	use("L3MON4D3/LuaSnip") -- snippets引擎，不装这个自动补全会出问题
+	use({ "L3MON4D3/LuaSnip", tag = "v1.*", run = "make install_jsregexp" }) -- snippets引擎，不装这个自动补全会出问题
 	use("saadparwaiz1/cmp_luasnip")
 	use("rafamadriz/friendly-snippets")
 	use({
@@ -95,10 +103,15 @@ return require("packer").startup(function(use)
 	use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons" })
 	use("lewis6991/gitsigns.nvim") -- 左则git提示
 
+	-- telescope
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.1", -- 文件检索
 		requires = { { "nvim-lua/plenary.nvim" }, { "kdheepak/lazygit.nvim" } },
+	})
+	use({
+		"nvim-telescope/telescope-file-browser.nvim",
+		requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
 	})
 	-- 终端
 	use({ "akinsho/toggleterm.nvim", tag = "*" })
@@ -116,6 +129,7 @@ return require("packer").startup(function(use)
 					},
 					shortcut = {
 						{ desc = " Update", group = "@property", action = "PackerSync", key = "u" },
+						{ desc = " Mason", group = "@property", action = "Mason", key = "m" },
 						{
 							desc = " Files",
 							group = "Label",
@@ -131,7 +145,7 @@ return require("packer").startup(function(use)
 						{
 							desc = " dotfiles",
 							group = "Number",
-							action = "Telescope dotfiles",
+							action = "edit ~/.bash_profile",
 							key = "d",
 						},
 					},
