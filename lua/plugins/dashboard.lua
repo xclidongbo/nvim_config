@@ -1,4 +1,5 @@
-local function custom_header()
+Dashboard = {}
+function Dashboard.Custom_Header()
 	return {
 		"",
 		"",
@@ -21,4 +22,4 @@ local function custom_header()
 	}
 end
 
-print(custom_header())
+return Dashboard
