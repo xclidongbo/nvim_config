@@ -1,3 +1,4 @@
+
 -- 自动安装packer
 local ensure_packer = function()
 	local fn = vim.fn
@@ -116,6 +117,7 @@ return require("packer").startup(function(use)
 	use({ "akinsho/toggleterm.nvim", tag = "*" })
 
 	-- dashboard-nvim
+
 	use({
 		"glepnir/dashboard-nvim",
 		event = "VimEnter",

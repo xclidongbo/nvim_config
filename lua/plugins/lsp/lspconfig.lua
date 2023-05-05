@@ -27,11 +27,14 @@ local on_attach = function(client, bufnr)
 	end
 end
 
+local lspconfig = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
--- local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local configs = require("lspconfig/configs")
+local capabilities_mcc = vim.lsp.protocol.make_client_capabilities()
+capabilities_mcc.textDocument.completion.completionItem.snippetSupport = true
 
-require("lspconfig").lua_ls.setup({
+lspconfig.lua_ls.setup({
 	settings = {
 		Lua = {
 			diagnostics = {
@@ -48,54 +51,73 @@ require("lspconfig").lua_ls.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
-require("lspconfig").tsserver.setup({
-	capabilities = capabilities,
+lspconfig.tsserver.setup({
+	capabilities = capabilities_mcc,
 	on_attach = on_attach,
 })
 
-require("lspconfig").cssls.setup({
-	capabilities = capabilities,
+lspconfig.cssls.setup({
+	capabilities = capabilities_mcc,
 	on_attach = on_attach,
 })
-require("lspconfig").html.setup({
-	capabilities = capabilities,
+lspconfig.html.setup({
+	capabilities = capabilities_mcc,
 	on_attach = on_attach,
 })
 
 -- go配置
-require("lspconfig").gopls.setup({
-	capabilities = capabilities,
+lspconfig.gopls.setup({
+	capabilities = capabilities_mcc,
 	on_attach = on_attach,
 })
 
 -- emmet_ls 配置
-require("lspconfig").emmet_ls.setup({})
--- local configs = require("lspconfig/configs")
--- local capabilities1 = vim.lsp.protocol.make_client_capabilities()
--- capabilities1.textDocument.completion.completionItem.snippetSupport = true
---
--- require("lspconfig").emmet_ls.setup({
--- 	capabilities = capabilities1,
--- 	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less" },
--- 	init_options = {
--- 		html = {
--- 			options = {
--- 				["bem.enabled"] = true,
--- 			},
--- 		},
--- 	},
--- })
+-- lspconfig.emmet_ls.setup({})
+
+lspconfig.emmet_ls.setup({
+	capabilities = capabilities_mcc,
+	filetypes = {
+		"css",
+		"eruby",
+		"html",
+		"javascript",
+		"javascriptreact",
+		"less",
+		"sass",
+		"scss",
+		"svelte",
+		"pug",
+		"typescriptreact",
+		"vue",
+	},
+	init_options = {
+		html = {
+			options = {
+				["bem.enabled"] = true,
+			},
+		},
+	},
+})
 
 -- ruby
-require("lspconfig").solargraph.setup({})
+lspconfig.solargraph.setup({
+	capabilities = capabilities_mcc,
+	on_attach = on_attach,
+})
 -- sourcekit
-require("lspconfig").sourcekit.setup({})
+lspconfig.sourcekit.setup({
+	capabilities = capabilities_mcc,
+	on_attach = on_attach,
+})
 -- bash lsp
-require("lspconfig").bashls.setup({})
+lspconfig.bashls.setup({
+	capabilities = capabilities_mcc,
+	on_attach = on_attach,
+})
 -- jsonls
-local capabilities1 = vim.lsp.protocol.make_client_capabilities()
-capabilities1.textDocument.completion.completionItem.snippetSupport = true
+-- local capabilities1 = vim.lsp.protocol.make_client_capabilities()
+-- capabilities_mcc.textDocument.completion.completionItem.snippetSupport = true
 
-require("lspconfig").jsonls.setup({
-	capabilities = capabilities1,
+lspconfig.jsonls.setup({
+	capabilities = capabilities_mcc,
 })
