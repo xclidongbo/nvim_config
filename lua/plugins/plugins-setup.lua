@@ -1,4 +1,3 @@
-
 -- 自动安装packer
 local ensure_packer = function()
 	local fn = vim.fn
@@ -47,7 +46,6 @@ return require("packer").startup(function(use)
 		},
 		tag = "nightly", -- optional, updated every week. (see issue #1193)
 	})
-
 	use("christoomey/vim-tmux-navigator") -- 用ctl-hjkl来定位窗口
 	-- 语法高亮
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
@@ -97,6 +95,16 @@ return require("packer").startup(function(use)
 	use("windwp/nvim-autopairs") -- 自动补全括号
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" })
 	use("JoosepAlviste/nvim-ts-context-commentstring") -- ts注释
+
+	-- use({
+	-- 	"danymat/neogen",
+	-- 	config = function()
+	-- 		require("neogen").setup({})
+	-- 	end,
+	-- 	requires = "nvim-treesitter/nvim-treesitter",
+	-- 	-- Uncomment next line if you want to follow only stable versions
+	-- 	-- tag = "*"
+	-- })
 
 	-- use "akinsho/bufferline.nvim" -- buffer分割线
 	-- using packer.nvim
@@ -197,6 +205,28 @@ return require("packer").startup(function(use)
 	-- go
 	use("ray-x/go.nvim")
 	use("ray-x/guihua.lua") -- recommended if need floating window support
+
+	-- chatgpt
+	-- use({
+	-- 	"jackMort/ChatGPT.nvim",
+	-- 	config = function()
+	-- 		require("chatgpt").setup()
+	-- 	end,
+	-- 	requires = {
+	-- 		"MunifTanjim/nui.nvim",
+	-- 		"nvim-lua/plenary.nvim",
+	-- 		"nvim-telescope/telescope.nvim",
+	-- 	},
+	-- })
+
+	-- flutter
+	use({
+		"akinsho/flutter-tools.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"stevearc/dressing.nvim", -- optional for vim.ui.select
+		},
+	})
 
 	if packer_bootstrap then
 		require("packer").sync()
