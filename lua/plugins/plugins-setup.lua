@@ -96,15 +96,15 @@ return require("packer").startup(function(use)
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" })
 	use("JoosepAlviste/nvim-ts-context-commentstring") -- ts注释
 
-	-- use({
-	-- 	"danymat/neogen",
-	-- 	config = function()
-	-- 		require("neogen").setup({})
-	-- 	end,
-	-- 	requires = "nvim-treesitter/nvim-treesitter",
-	-- 	-- Uncomment next line if you want to follow only stable versions
-	-- 	-- tag = "*"
-	-- })
+	use({
+		"danymat/neogen",
+		config = function()
+			require("neogen").setup({})
+		end,
+		requires = "nvim-treesitter/nvim-treesitter",
+		-- Uncomment next line if you want to follow only stable versions
+		-- tag = "*"
+	})
 
 	-- use "akinsho/bufferline.nvim" -- buffer分割线
 	-- using packer.nvim
