@@ -16,6 +16,11 @@ if not mason_null_ls_status then
 	return
 end
 
+local mason_dap_status, mason_nvim_dap = pcall(require, "mason-nvim-dap")
+if not mason_dap_status then
+	return
+end
+
 mason.setup({
 	ui = {
 		icons = {
@@ -53,3 +58,5 @@ mason_null_ls.setup({
 	-- auto-install configured formatters & linters (with null-ls)
 	automatic_installation = true,
 })
+
+mason_nvim_dap.setup({})
