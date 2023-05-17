@@ -11,12 +11,8 @@ return {
     dependencies = { "rafamadriz/friendly-snippets" },
     opts = function()
       require("luasnip.loaders.from_vscode").lazy_load()
+      -- 自定义路径
       require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./my-snippets" } })
-    end,
-  },
-  {
-    "rafamadriz/friendly-snippets",
-    opts = function()
       require("luasnip").filetype_extend("javascript", { "javascriptreact" })
     end,
   },

@@ -156,6 +156,9 @@ return {
         "vim",
         "yaml",
       },
+      autotag = {
+        enabled = true,
+      },
     },
   },
 
