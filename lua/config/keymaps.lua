@@ -4,6 +4,12 @@
 
 local keymap = vim.keymap.set
 keymap("n", "<leader>sx", require("telescope.builtin").resume, { noremap = true, silent = true, desc = "Resume" })
+-- keymap(
+--   "n",
+--   "<leader>cc",
+--   require("telescope").extensions.flutter.commands,
+--   { noremap = true, silent = true, desc = "Flutter Commands" }
+-- )
 --
 -- -- lspsaga
 -- -- LSP finder - Find the symbol's definition
