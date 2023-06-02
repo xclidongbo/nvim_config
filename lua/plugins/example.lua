@@ -159,6 +159,9 @@ return {
       autotag = {
         enabled = true,
       },
+      context_commentstring = {
+        enable = true,
+      },
     },
   },
 
@@ -205,15 +208,18 @@ return {
   -- add any tools you want to have installed below
   {
     "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "stylua",
-        "shellcheck",
-        "shfmt",
-        "flake8",
-        "tsserver",
-      },
-    },
+    opts = function(_, opts)
+      table.insert(opts.ensure_installed, "prettierd")
+      return {
+        ensure_installed = {
+          "stylua",
+          "shellcheck",
+          "shfmt",
+          "flake8",
+          "tsserver",
+        },
+      }
+    end,
   },
 
   -- Use <tab> for completion and snippets (supertab)

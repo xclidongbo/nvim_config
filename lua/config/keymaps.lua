@@ -4,6 +4,15 @@
 
 local keymap = vim.keymap.set
 keymap("n", "<leader>sx", require("telescope.builtin").resume, { noremap = true, silent = true, desc = "Resume" })
+
+-- neogen
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>nf",
+  ":lua require('neogen').generate()<CR>",
+  { noremap = true, silent = true, desc = "注释func & class & type & file" }
+)
+
 -- keymap(
 --   "n",
 --   "<leader>cc",
