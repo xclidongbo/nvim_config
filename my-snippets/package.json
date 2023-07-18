@@ -8,6 +8,10 @@
       {
         "language": "lua",
         "path": "./lua.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./javascript/react-native.json"
       }
     ]
   }
