@@ -132,6 +132,17 @@ return {
     },
   },
 
+  -- add docker
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        dockerls = {},
+        docker_compose_language_service = {},
+      },
+    },
+  },
+
   -- for typescript, LazyVim also includes extra specs to properly setup lspconfig,
   -- treesitter, mason and typescript.nvim. So instead of the above, you can use:
   { import = "lazyvim.plugins.extras.lang.typescript" },
@@ -171,6 +182,9 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
+      if type(opts.ensure_installed) == "table" then
+        vim.list_extend(opts.ensure_installed, { "dockerfile" })
+      end
       -- add tsx and treesitter
       vim.list_extend(opts.ensure_installed, {
         "tsx",
