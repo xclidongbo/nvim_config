@@ -7,7 +7,9 @@ return {
       "nvim-treesitter/nvim-treesitter",
     },
     config = function()
-      require("go").setup()
+      require("go").setup({
+        run_in_floaterm = true,
+      })
     end,
     event = { "CmdlineEnter" },
     ft = { "go", "gomod" },
