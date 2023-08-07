@@ -4,6 +4,7 @@ return {
     version = false, -- wait till new 0.7.0 release to put it back on semver
     event = "VimEnter",
     opts = function()
+      -- ascii
       local ascii = require("ascii")
       local val = ascii.get_random("text", "neovim")
       local logo = table.concat(val, "\n")
@@ -26,6 +27,7 @@ return {
         new_section("New file",     "ene | startinsert",    "Built-in"),
         new_section("Quit",         "qa",                   "Built-in"),
         new_section("Session restore", [[lua require("persistence").load()]], "Session"),
+        new_section("Projects", "Telescope projects", "Telescope")
       },
       content_hooks = {
         starter.gen_hook.adding_bullet(pad .. "░ ", false),
@@ -60,8 +62,8 @@ return {
         end,
       })
     end,
-    -- dependencies = {
-    --   "MaximilianLloyd/ascii.nvim",
-    -- },
+    dependencies = {
+      "MaximilianLloyd/ascii.nvim",
+    },
   },
 }
