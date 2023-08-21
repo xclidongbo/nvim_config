@@ -21,12 +21,15 @@ return {
   { "folke/trouble.nvim", enabled = false },
 
   -- add symbols-outline
-  {
-    "simrat39/symbols-outline.nvim",
-    cmd = "SymbolsOutline",
-    keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
-    config = true,
-  },
+  -- {
+  --   "simrat39/symbols-outline.nvim",
+  --   cmd = "SymbolsOutline",
+  --   keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
+  --   config = true,
+  --   opts = {
+  --     position = "right",
+  --   },
+  -- },
 
   -- override nvim-cmp and add cmp-emoji
   -- {
