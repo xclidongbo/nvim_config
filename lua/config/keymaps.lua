@@ -13,6 +13,36 @@ vim.api.nvim_set_keymap(
   { noremap = true, silent = true, desc = "注释func & class & type & file" }
 )
 
+-- text case
+vim.api.nvim_set_keymap("n", "gaa", "<cmd>TextCaseOpenTelescopeQuickChange<CR>", { desc = "Telescope Quick Change" })
+vim.api.nvim_set_keymap("n", "gai", "<cmd>TextCaseOpenTelescopeLSPChange<CR>", { desc = "Telescope LSP Change" })
+
+vim.api.nvim_set_keymap(
+  "n",
+  "gac",
+  ":lua require('textcase').lsp_rename('to_camel_case')<CR>",
+  { desc = "To camel case" }
+)
+
+vim.api.nvim_set_keymap(
+  "n",
+  "gas",
+  ":lua require('textcase').lsp_rename('to_snake_case')<CR>",
+  { desc = "To snake case" }
+)
+
+vim.api.nvim_set_keymap(
+  "n",
+  "gau",
+  ":lua require('textcase').lsp_rename('to_upper_case')<CR>",
+  { desc = "To upper case" }
+)
+vim.api.nvim_set_keymap(
+  "n",
+  "gal",
+  ":lua require('textcase').lsp_rename('to_lower_case')<CR>",
+  { desc = "To lower case" }
+)
 -- keymap(
 --   "n",
 --   "<leader>cc",

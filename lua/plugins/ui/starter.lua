@@ -6,7 +6,8 @@ return {
     opts = function()
       -- ascii
       local ascii = require("ascii")
-      local val = ascii.get_random("text", "neovim")
+      -- local val = ascii.get_random("text", "neovim")
+      local val = ascii.art.text.neovim.ansi_shadow
       local logo = table.concat(val, "\n")
       local pad = string.rep(" ", 22)
       local new_section = function(name, action, section)
