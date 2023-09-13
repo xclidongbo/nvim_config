@@ -43,6 +43,7 @@ vim.api.nvim_set_keymap(
   ":lua require('textcase').lsp_rename('to_lower_case')<CR>",
   { desc = "To lower case" }
 )
+
 -- keymap(
 --   "n",
 --   "<leader>cc",
