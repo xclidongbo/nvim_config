@@ -17,6 +17,7 @@ return {
       "vim",
       "yaml",
       "dockerfile",
+      "ruby",
     },
     autotag = {
       enabled = true,

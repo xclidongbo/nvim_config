@@ -5,6 +5,7 @@ return {
     opts = {
       ---@type lspconfig.options
       servers = {
+        solargraph = {},
         emmet_ls = {
           filetypes = {
             "html",
