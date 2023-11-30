@@ -15,13 +15,14 @@ return {
         desc = "Flutter Commands",
       },
     },
-    config = function()
-      require("flutter-tools").setup({
-        ui = {
-          border = "rounded",
-        },
-      })
-      require("telescope").load_extension("flutter")
-    end,
+    config = true,
+    -- config = function()
+    --   require("flutter-tools").setup({
+    --     ui = {
+    --       border = "rounded",
+    --     },
+    --   })
+    --   require("telescope").load_extension("flutter")
+    -- end,
   },
 }
