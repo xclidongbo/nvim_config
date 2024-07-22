@@ -1,5 +1,5 @@
 return {
-  { "JoosepAlviste/nvim-ts-context-commentstring", lazy = true, event = { "User FileOpened" } },
+  -- { "JoosepAlviste/nvim-ts-context-commentstring", lazy = true, event = { "User FileOpened" } },
   {
     "danymat/neogen",
     dependencies = "nvim-treesitter/nvim-treesitter",

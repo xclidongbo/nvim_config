@@ -14,6 +14,9 @@ require("lazy").setup({
     -- code
     { import = "lazyvim.plugins.extras.coding.yanky" },
     { import = "lazyvim.plugins.extras.coding.codeium" },
+    { import = "lazyvim.plugins.extras.coding.mini-comment" },
+    { import = "lazyvim.plugins.extras.coding.neogen" },
+    { import = "lazyvim.plugins.extras.coding.luasnip" },
     -- { import = "lazyvim.plugins.extras.coding.copilot" },
     -- ui
     { import = "lazyvim.plugins.extras.ui.edgy" },
