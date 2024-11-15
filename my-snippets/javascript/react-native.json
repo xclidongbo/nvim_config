@@ -1,0 +1,28 @@
+{
+  "rnv3sn": {
+    "prefix": "rn3i",
+    "body": [
+      "static navigationOptions = ({ navigation }) => {",
+      "  return {",
+      "    headerTitle: '${1}',",
+      "    headerTintColor: '${2:#333}',",
+      "    headerStyle: CommonStyle.ThemeBGColor,",
+      "    marginTop: Android ? StatusBar.currentHeight : 0,",
+      "  };",
+      "};"
+    ],
+    "description": "react-navigation v3 import"
+  },
+  "rnc&s": {
+    "prefix": "rnc",
+    "body": [
+      "constructor(props) {",
+      "  super(props)",
+      "  this.state = {",
+      "    ${1}",
+      "  }",
+      "}"
+    ],
+    "description": "react-native contructor && state"
+  }
+}
