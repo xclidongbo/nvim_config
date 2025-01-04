@@ -18,6 +18,9 @@ return {
       "yaml",
       "dockerfile",
       "ruby",
+      "vue",
+      "dart",
+      "java",
     },
     autotag = {
       enabled = true,

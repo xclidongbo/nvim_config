@@ -11,6 +11,7 @@ return {
           "shfmt",
           "flake8",
           "solargraph",
+          "jdtls",
         },
       }
     end,
